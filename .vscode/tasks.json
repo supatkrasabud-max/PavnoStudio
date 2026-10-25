@@ -1,0 +1,4 @@
+{
+  "version": "2.0.0",
+  "tasks": [{"label":"PAVNO: เปิดเว็บในเครื่อง","type":"shell","command":"& '${workspaceFolder}/Start-PAVNO.cmd'","isBackground":true,"problemMatcher":[],"presentation":{"reveal":"always","panel":"dedicated"}}]
+}

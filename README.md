@@ -1,0 +1,56 @@
+# PAVNO DIGITAL
+
+เว็บไซต์หน้าร้านอีบุ๊กและเดโมระบบจัดการร้าน โทนดำ–แดงส้ม
+
+- หน้าร้าน: https://pavno-digital.vercel.app/
+- เดโม: https://pavno-digital.vercel.app/demo/
+
+## โครงสร้าง
+
+```text
+dist/
+  index.html          หน้าร้าน
+  demo/index.html     เดโมหลังบ้าน หน้าร้าน ตะกร้า QR และ Landing Page
+vercel.json           ตั้งค่าให้ Vercel เผยแพร่โฟลเดอร์ dist
+```
+
+เว็บไซต์เป็น static HTML/CSS/JavaScript ไม่ต้องติดตั้งแพ็กเกจหรือสั่ง build
+
+## อัปโหลดขึ้น GitHub
+
+1. แตก ZIP บนคอมพิวเตอร์
+2. สร้าง repository ของคุณบน GitHub
+3. เลือก Upload files แล้วอัปโหลดไฟล์และโฟลเดอร์ที่อยู่ภายใน ZIP โดยให้ README.md และ vercel.json อยู่ที่ราก repository
+4. Commit ไฟล์
+5. เปิด Vercel > Add New Project > Import repository ที่สร้าง
+6. Framework Preset: Other / Output Directory: dist / ไม่มี Build Command
+7. Deploy
+
+หากต้องการเชื่อมกับโปรเจกต์ pavno-digital เดิม ให้เข้าโปรเจกต์นั้น > Settings > Git แล้วเชื่อม repository ของคุณ แทนการสร้างโปรเจกต์ใหม่
+
+## ดูในเครื่อง
+
+เปิด dist/index.html หรือ dist/demo/index.html ด้วยเบราว์เซอร์ได้
+สำหรับเดโมควรใช้ local HTTP server เพื่อให้ localStorage ทำงานตาม origin อย่างชัดเจน เช่น หากมี Python:
+
+```sh
+python -m http.server 8000 --directory dist
+```
+
+แล้วเปิด http://localhost:8000/demo/
+
+## ขอบเขตระบบ
+
+เดโมไม่ใช่ WordPress ที่ติดตั้งจริง ไม่มีการเข้าสู่ระบบ ฐานข้อมูลเซิร์ฟเวอร์ รับชำระเงิน ตรวจสลิป หรือส่งไฟล์จริง
+สินค้า ราคา คำสั่งซื้อ และรายชื่อลูกค้าในเดโมเป็นข้อมูลสมมติ เก็บใน localStorage ของเบราว์เซอร์นั้นเท่านั้น
+รูปที่เลือกเก็บในเบราว์เซอร์ ไม่อัปโหลดขึ้นโฮสต์ ไฟล์ PDF จำเฉพาะชื่อไฟล์
+ไม่ใช้ข้อมูลส่วนตัว ข้อมูลบัญชี หรือไฟล์หนังสือจริงในการทดลอง
+ไม่มี Meta/TikTok Pixel และไม่มีการส่งข้อมูลลูกค้าไปแพลตฟอร์มโฆษณา
+สินค้าที่เพิ่มในเดโมจะไม่ถูกเพิ่มใน GitHub และไม่แสดงในเบราว์เซอร์ของบุคคลอื่น
+หน้าเว็บโหลดฟอนต์จาก Google Fonts เมื่อเชื่อมอินเทอร์เน็ต
+
+## แก้ไขภายหลัง
+
+เปลี่ยนไฟล์ใน dist แล้ว push ไป GitHub ที่เชื่อมกับ Vercel เพื่อให้เผยแพร่เวอร์ชันใหม่
+ไม่ใส่รหัสผ่าน access token ไฟล์ .env หรือ PDF ฉบับขายลง repository สาธารณะ
+ชุดนี้ไม่รวมธีม WordPress ซึ่งแยกเป็นอีกชุดติดตั้ง
