@@ -47,6 +47,9 @@ const analyticsStyles = document.createElement('link');
 analyticsStyles.rel = 'stylesheet';
 analyticsStyles.href = '/assets/analytics-admin.css?v=1';
 document.head.append(analyticsStyles);
+const productionCopyScript = document.createElement('script');
+productionCopyScript.src = '/assets/production-copy.js?v=1';
+document.head.append(productionCopyScript);
 analyticsNavButton.type = 'button';
 analyticsNavButton.textContent = 'สถิติผู้เข้าชมเว็บไซต์';
 analyticsNavButton.addEventListener('click', () => {
