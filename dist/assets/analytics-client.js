@@ -50,11 +50,11 @@
   };
   window.addEventListener('popstate', () => track('page_view'));
   document.addEventListener('click', event => {
-    const target = event.target.closest('[data-add],[data-buy],[data-detail],a[href*="/samples/"],a[href*="/books/"]');
+    const target = event.target.closest('[data-add],[data-buy],[data-detail],a[href*="/samples/"],a[href*="/books/"],a[href*="/product/"]');
     if (!target) return;
     if (target.matches('a[href*="/samples/"]')) return track('sample_open');
     if (target.dataset.add || target.dataset.buy) return track('cart_add', { product_id: target.dataset.add || target.dataset.buy });
     if (target.dataset.detail) return track('product_view', { product_id: target.dataset.detail });
-    if (target.matches('a[href*="/books/"]')) return track('product_view');
+    if (target.matches('a[href*="/books/"],a[href*="/product/"]')) return track('product_view');
   });
 })();
