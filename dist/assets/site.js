@@ -16,7 +16,7 @@
   const nav = [['/', 'หน้าแรก'], ['/books/', 'สินค้าทั้งหมด'], ['/books/?cat=lang', 'ภาษา'], ['/books/?cat=math', 'คณิต'], ['/books/?cat=color', 'ระบายสี'], ['/learn/#club', 'สมาชิกรายปี']];
   const hdr = document.getElementById('site-header');
   if (hdr) {
-    hdr.outerHTML = `<div class="bar">ใหม่! สมุดฝึก 11 เล่ม เริ่มต้น 79 บาท · พิมพ์ได้ไม่จำกัด · <a href="${L('/books/')}">เลือกเลย</a></div>
+    hdr.outerHTML = `<div class="bar">ใหม่! สมุดฝึก 12 เล่ม เริ่มต้น 39 บาท · พิมพ์ได้ไม่จำกัด · <a href="${L('/books/')}">เลือกเลย</a></div>
 <header class="hdr"><div class="wrap"><a class="logo" href="${L('/')}"><img src="/assets/pavno-logo.png" alt="" width="36" height="36">PAVNO</a>
 <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="เปิดเมนู">☰</button>
 <nav class="nav" id="nav">${nav.map(([h, t]) => `<a href="${L(h)}"${(h === here || (h === '/books/' && here === '/books/' && !location.search)) ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</nav>

@@ -11,6 +11,7 @@ const PAY_LINKS = {
  'math-mul': 'https://buy.stripe.com/dRmaEWbjp6xf6sw9bV5os0e',
  'math-div': 'https://buy.stripe.com/3cI9AS739aNv2cgbk35os0f',
  'math-bundle': 'https://buy.stripe.com/cNi00ibjp8Fn0481Jt5os0g',
- 'coloring': 'https://buy.stripe.com/cNidR8bjp5tb4ko2Nx5os0h'
+ 'coloring': 'https://buy.stripe.com/cNidR8bjp5tb4ko2Nx5os0h',
+ 'make10': 'https://buy.stripe.com/6oUdR85Z51cV6swewf5os0i'
 };
 function payLink(id){return Object.prototype.hasOwnProperty.call(PAY_LINKS,id)?PAY_LINKS[id]:''}
